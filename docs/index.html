@@ -17,7 +17,149 @@ This inconsistency between training and conversion stages constrains the speaker
 To address this issue, a cyclic training method is proposed in this paper.
 In this method, acoustic features of the target speaker are first fed into the ASR model and an auxiliary synthesizer sequentially to generate pseudo-source acoustic features with diverse speaker characteristics,
 which are then sent back into the ASR model and the target synthesizer  to generate cyclicly reconstructed acoustic features. The reconstruction loss is adopted to optimize the target synthesizer. Experimental results demonstrated that our proposed method achieved more consistent accuracies of acoustic feature prediction for various source speakers than the baseline recognition-synthesis based method. It also achieved better similarity performance, especially for the pair of source and target speakers with distant speaker characteristics.
+<h3>note:</h3>Due to data confidentiality of some source speakers in our subjective evaluation, the source speakers presented here are not the same as the ones in our subjective evaluation.
+<p>&nbsp;</p>
+<hr>
+<h3>0. Natural speeches of the target speaker</h3>
+<table border="1">
+  <tbody><tr>
+    <td width="200"><audio src="REF/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="REF/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="REF/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="REF/4.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+</tbody></table>
 
-<h3>The website is developing, and the audio samples will be released soon </h3>
+<h3>&nbsp;</h3>
+<h3>1. Comparsion when speaker characteristics of source and target speakers are not distant (three source speakers, two females and one male)</h3>
+<p>&nbsp;</p>
+<table border="1">
+  <tbody><tr>
+    <td width="200"><div align="center">source</div></td>
+    <td width="200"><div align="center">baseline</div></td>
+    <td width="200"><div align="center">proposed</div></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="A/src/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="A/baseline/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="A/proposed/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="A/src/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="A/baseline/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="A/proposed/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="A/src/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="A/baseline/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="A/proposed/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="B/src/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="B/baseline/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="B/proposed/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="B/src/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="B/baseline/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="B/proposed/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="B/src/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="B/baseline/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="B/proposed/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="C/src/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="C/baseline/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="C/proposed/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="C/src/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="C/baseline/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="C/proposed/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="C/src/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="C/baseline/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="C/proposed/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+</tbody></table>
+
+<h3>&nbsp;</h3>
+<h3>1. Comparsion when speaker characteristics of source and target speakers are distant (three male source speakers)</h3>
+<p>&nbsp;</p>
+<table border="1">
+  <tbody><tr>
+    <td width="200"><div align="center">source</div></td>
+    <td width="200"><div align="center">baseline</div></td>
+    <td width="200"><div align="center">baseline+adv</div></td>
+    <td width="200"><div align="center">proposed</div></td>
+    <td width="200"><div align="center">proposed-adv</div></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="D/src/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/baseline/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/baseline+adv/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/proposed/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/proposed-adv/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="D/src/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/baseline/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/baseline+adv/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/proposed/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/proposed-adv/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="D/src/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/baseline/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/baseline+adv/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/proposed/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="D/proposed-adv/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="E/src/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/baseline/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/baseline+adv/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/proposed/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/proposed-adv/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="E/src/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/baseline/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/baseline+adv/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/proposed/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/proposed-adv/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="E/src/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/baseline/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/baseline+adv/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/proposed/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="E/proposed-adv/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="F/src/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/baseline/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/baseline+adv/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/proposed/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/proposed-adv/1.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="F/src/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/baseline/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/baseline+adv/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/proposed/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/proposed-adv/2.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td width="200"><audio src="F/src/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/baseline/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/baseline+adv/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/proposed/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td width="200"><audio src="F/proposed-adv/3.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+</tbody></table>
 
 </body></html>
